@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @stand.area %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @stand.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @stand.description %>
+</p>
+
+<%= link_to 'Edit', edit_stand_path(@stand) %> |
+<%= link_to 'Back', stands_path %>
