@@ -4,7 +4,7 @@ class StandsController < ApplicationController
   # GET /stands
   # GET /stands.json
   def index
-    @stands = Stand.includes(:tags)
+    @stands = Stand.includes(:tags).order(:order, :id)
     @stands = @stands.select_by_tag(params[:tag]) if params[:tag]
   end
 
