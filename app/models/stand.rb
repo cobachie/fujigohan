@@ -1,4 +1,7 @@
 class Stand < ApplicationRecord
+  has_many :stand_tags
+  has_many :tags, :through => :stand_tags
+
   validates :area, :name, presence: true
 
   def image_url

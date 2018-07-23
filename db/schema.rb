@@ -10,13 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180630085728) do
+ActiveRecord::Schema.define(version: 20180723034233) do
+
+  create_table "stand_tags", force: :cascade do |t|
+    t.integer "stand_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["stand_id"], name: "index_stand_tags_on_stand_id"
+    t.index ["tag_id"], name: "index_stand_tags_on_tag_id"
+  end
 
   create_table "stands", force: :cascade do |t|
     t.string "area"
     t.string "name"
     t.string "image"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
