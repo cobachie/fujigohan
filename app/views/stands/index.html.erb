@@ -1,31 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Stands</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Area</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @stands.each do |stand| %>
-      <tr>
-        <td><%= stand.area %></td>
-        <td><%= stand.name %></td>
-        <td><%= stand.description %></td>
-        <td><%= link_to 'Show', stand %></td>
-        <td><%= link_to 'Edit', edit_stand_path(stand) %></td>
-        <td><%= link_to 'Destroy', stand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Stand', new_stand_path %>
+<div class="row row-eq-height" id="stand-index">
+  <% @stands.each do |stand| %>
+    <div class="col-md-2 col-sm-3 col-xs-6 stand">
+      <%= image_tag stand.image_url %>
+      <h3><%= stand.name %></h3>
+      <p><%= stand.description %></p>
+    </div>
+  <% end %>
+</div>
