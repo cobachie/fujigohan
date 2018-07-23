@@ -5,7 +5,7 @@ class Stand < ApplicationRecord
   validates :area, :name, presence: true
 
   scope :select_by_tag, -> (tag_id) {
-    where(tags: {id: tag_id})
+    where(tags: {id: tag_id}).order(:order)
   }
 
   def image_url
