@@ -10,12 +10,14 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
 
 body {
   width: 100%;
@@ -23,9 +25,49 @@ body {
   font-size: 1.0rem;
 }
 
+footer {
+  position: relative;
+  bottom: 0;
+  background-color: #353b48;
+  height: 5rem;
+  width: 100%;
+
+  p {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    line-height: 5rem;
+    text-align: center;
+  }
+}
+
+.content {
+  min-height: 90vh;
+}
+
 .row-eq-height {
   display: flex;
   flex-wrap: wrap;
+}
+
+.navbar {
+  position: relative;
+  height: 6rem;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  .navbar-brand {
+    height: 6rem;
+    line-height: 6rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 auto;
+    color: #353b48;
+    letter-spacing: 2px;
+  }
 }
 
 #stand-index {
@@ -40,13 +82,37 @@ body {
     font-weight: 600;
     font-size: 1.2rem;
     letter-spacing: 1px;
+    margin-top: 0.5rem;
   }
 
   img {
     width: 100%;
     height: 12rem;
     object-fit: cover;
+    opacity: 0.85;
+  }
+
+  .stand-badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 2px 5px;
+    font-size: 0.7rem;
+    color: #fff;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 10px;
     opacity: 0.9;
+  }
+
+  .all-badge {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #353b48;
   }
 }
 

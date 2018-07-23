@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180723034233) do
+ActiveRecord::Schema.define(version: 20180723043406) do
 
   create_table "stand_tags", force: :cascade do |t|
     t.integer "stand_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180723034233) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "hex"
   end
 
 end

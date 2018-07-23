@@ -1,9 +1,18 @@
-<div class="row row-eq-height" id="stand-index">
-  <% @stands.each do |stand| %>
-    <div class="col-md-2 col-sm-3 col-xs-6 stand">
-      <%= image_tag stand.image_url %>
-      <h3><%= stand.name %></h3>
-      <p><%= stand.description %></p>
-    </div>
+<div class="content" id="stand-index">
+  <%= link_to stands_path, class: "badge badge-pill all-badge" do %>
+    😋ALL
   <% end %>
+
+  <div class="row row-eq-height">
+    <% @stands.each do |stand| %>
+      <div class="col-md-2 col-sm-3 col-xs-6 stand">
+        <%= image_tag stand.image_url %>
+        <% stand.tags.each do |tag| %>
+          <%= tag_badge(tag) %>
+        <% end %>
+        <h3><%= stand.name %></h3>
+        <p><%= stand.description %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
