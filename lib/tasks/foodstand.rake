@@ -16,8 +16,9 @@ namespace :foodstand do
       doc.xpath("//section[@id='#{area}']").each do |section|
         names = section.xpath('h1').children.map(&:text)
         descriptions = section.xpath('p[@class="mb80"]').children.map(&:text)
-        names.zip(descriptions).each do |name, description|
-          stands << { area: area, name: name, description: description}
+        images = section.children.xpath('img/@src').map(&:text)
+        names.zip(images, descriptions).each do |name, image, description|
+          stands << { area: area, name: name, image: image, description: description}
         end
       end
     end

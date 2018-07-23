@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20180630085728) do
   create_table "stands", force: :cascade do |t|
     t.string "area"
     t.string "name"
+    t.string "image"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
