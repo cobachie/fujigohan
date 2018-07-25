@@ -7,6 +7,17 @@
     <% @stands.each do |stand| %>
       <div class="col-md-2 col-sm-3 col-xs-6 stand">
         <%= image_tag stand.image_url %>
+        <div class="fav">
+          <% if @fav_ids&.include?(stand.id.to_s) %>
+            <%= link_to remove_fav_stand_path(stand) do %>
+              <i class="fa fa-heart"></i>
+            <% end %>
+          <% else %>
+            <%= link_to add_fav_stand_path(stand) do %>
+              <i class="fa fa-heart-o"></i>
+            <% end %>
+          <% end %>
+        </div>
         <% stand.tags.each do |tag| %>
           <%= tag_badge(tag) %>
         <% end %>

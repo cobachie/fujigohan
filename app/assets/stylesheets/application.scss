@@ -73,10 +73,29 @@ footer {
 
 #stand-index {
   .stand {
+    position: relative;
     margin-bottom: 1rem;
     padding-left: 0.7rem;
     padding-right: 0.7rem;
     height: 30rem;
+  }
+
+  .fav {
+    position: absolute;
+    top: 0px;
+    right: 1rem;
+    opacity: 0.8;
+    background-color: #fff;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+
+    a {
+      color: #e74c3c;
+    }
   }
 
   h3 {
@@ -119,4 +138,3 @@ footer {
     background-color: #353b48;
   }
 }
-
