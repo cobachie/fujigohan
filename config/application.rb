@@ -11,7 +11,8 @@ module Fujigohan
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
-    config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 2.weeks }
+    redis_url = ENV["REDIS_URL"] || "redis://localhost:6379/0/cache"
+    config.cache_store = :redis_store, redis_url, { expires_in: 2.weeks }
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

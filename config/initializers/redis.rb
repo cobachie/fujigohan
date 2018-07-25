@@ -1,2 +1,4 @@
 require 'redis'
-REDIS = Redis.new(host: 'localhost', port: '6379')
+redis_host = ENV["REDIS_HOST"] || "localhost"
+redis_port = ENV["REDIS_PORT"] || "6379"
+REDIS = Redis.new(host: redis_host, port: redis_port)
