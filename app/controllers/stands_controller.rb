@@ -23,14 +23,14 @@ class StandsController < ApplicationController
     ids = get_redis_val || []
     ids << params[:id]
     set_redis_val(ids)
-    redirect_to stands_url
+    redirect_to stands_url(tag: params[:tag])
   end
 
   def remove_fav
     ids = get_redis_val.dup
     ids.delete(@stand.id.to_s)
     set_redis_val(ids)
-    redirect_to stands_url
+    redirect_to stands_url(tag: params[:tag])
   end
 
   # GET /stands/1

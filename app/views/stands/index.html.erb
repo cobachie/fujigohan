@@ -9,11 +9,11 @@
         <%= image_tag stand.image_url %>
         <div class="fav">
           <% if @fav_ids&.include?(stand.id.to_s) %>
-            <%= link_to remove_fav_stand_path(stand) do %>
+            <%= link_to remove_fav_stand_path(stand, tag: params[:tag]) do %>
               <i class="fa fa-heart"></i>
             <% end %>
           <% else %>
-            <%= link_to add_fav_stand_path(stand) do %>
+            <%= link_to add_fav_stand_path(stand, tag: params[:tag]) do %>
               <i class="fa fa-heart-o"></i>
             <% end %>
           <% end %>
