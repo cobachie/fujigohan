@@ -1,4 +1,3 @@
 require 'redis'
-redis_host = ENV["REDIS_HOST"] || "localhost"
-redis_port = ENV["REDIS_PORT"] || "6379"
-REDIS = Redis.new(host: redis_host, port: redis_port)
+uri = URI.parse(ENV["REDISCLOUD_URL"] || "redis://localhost:6379/0/cache")
+REDIS = Redis.new(host: uri.host, port: uri.port)
